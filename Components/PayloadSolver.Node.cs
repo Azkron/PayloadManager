@@ -16,10 +16,8 @@ namespace PayloadManager.Components
             List<int> ps = new List<int>();
             int totalP;
             float totalCost;
-            bool surpassed;
             public float averageCost { get; private set; }
             public bool done { get; private set; }
-
 
             public Node(List<PowerplantInfo> unused)
             {
@@ -57,7 +55,6 @@ namespace PayloadManager.Components
                 CalculateTotalPAndCost();
 
                 done = totalP == _payload.load;
-                surpassed = totalP > _payload.load;
             }
 
             private void ReducePreviousP(int toReduce)
@@ -94,7 +91,22 @@ namespace PayloadManager.Components
             {
                 BuildConnections();
                 foreach (Node node in connections)
+                {
+                    // save nodes with the least surplus and best cost in case there is no perfect solution
+                    if (node.totalP > _payload.load)
+                        if( node.totalP < _closestP)
+                        {
+                            _minAverageCost = node.averageCost;
+                            _lastNode = node;
+                        }
+                        else if (node.totalP == _closestP && node.averageCost < _minAverageCost)
+                        {
+                            _minAverageCost = node.averageCost;
+                            _lastNode = node;
+                        }
+
                     _nodes.Add(node);
+                }
             }
 
             private void BuildConnections()
@@ -103,8 +115,7 @@ namespace PayloadManager.Components
                 for (int i = 0; i < unused.Count; ++i)
                 {
                     Node node = new Node(this, i);
-                    if (!node.surpassed)
-                        connections.Add(node);
+                    connections.Add(node);
                 }
 
                 connections.Sort(Comparer);

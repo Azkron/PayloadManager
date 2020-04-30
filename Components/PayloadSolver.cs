@@ -14,7 +14,9 @@ namespace PayloadManager.Components
         private static float _minAverageCost = 9999f;
         private static List<Node> _nodes;
         private static Node _lastNode;
-        private static bool _optimalFound;
+        private static int _closestP;
+        private static float _bestAverage;
+        private static List<PowerplantInfo> _infos;
         public static void _Init()
         {
             _infoBuilders = new Dictionary<string,
@@ -46,36 +48,67 @@ namespace PayloadManager.Components
         public static Assingment[] Process(Payload payload)
         {
             _payload = payload;
-
-            List<PowerplantInfo> infos = new List<PowerplantInfo>();
+            _infos = new List<PowerplantInfo>();
             foreach (Powerplant p in payload.powerPlants)
-                infos.Add(_infoBuilders[p.type](p, payload.fuels));
+                _infos.Add(_infoBuilders[p.type](p, payload.fuels));
 
-            infos.Sort((p1, p2) => p1.costPerUnit < p2.costPerUnit ? -1 : 1);
-
-            Node node = AstarSearch(infos);
-
-            if (node != null)
+            if(!PowerSurplus())
+                return GetMaxAssingments();
+            else
+            {
+                _infos.Sort((p1, p2) => p1.costPerUnit < p2.costPerUnit ? -1 : 1);
+                Node node = AstarSearch(_infos);
                 return node.GetAssingments();
-            return new Assingment[] { new Assingment() { name = "no", p = 0 } };
+            }
         }
+
+        private static bool PowerSurplus()
+        {
+            int totalMaxP = 0;
+            foreach (PowerplantInfo info in _infos)
+                totalMaxP += info.pmax;
+            return totalMaxP > _payload.load;
+        }
+
+        private static Assingment[] GetMaxAssingments()
+        {
+            Assingment[] assingments = new Assingment[_infos.Count];
+            for (int i = 0; i < assingments.Length; ++i)
+                assingments[i] = new Assingment() { name = _infos[i].name, p = _infos[i].pmax };
+            return assingments;
+        }
+
+        private static void ResetGraph()
+        {
+            _closestP = _payload.load + 9999;
+            _lastNode = null;
+            _bestAverage = 9999f;
+            _nodes = new List<Node>();
+        }
+
         private static Node AstarSearch(List<PowerplantInfo> infos)
         {
-            _nodes = new List<Node>();
+            ResetGraph();
             _nodes.Add(new Node(infos));
-            while (_nodes.Count > 0 && !_optimalFound)
+            while (_nodes.Count > 0)
             {
                 _nodes.Sort(Node.Comparer);
                 Node node = _nodes[0];
                 if (node.done)
-                    return node;
-                _nodes.RemoveAt(0);
-                _minAverageCost = node.averageCost;
-                node.Explore();
+                {
+                    _lastNode = node;
+                    break;
+                }
+                else
+                {
+                    _nodes.RemoveAt(0);
+                    _minAverageCost = node.averageCost;
+                    node.Explore();
+                }
             }
 
             // TODO return node based on done, surpass quantity, average
-            return null;
+            return _lastNode;
         }
 
 
