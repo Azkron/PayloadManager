@@ -14,7 +14,7 @@ namespace PayloadManager
     {
         public static void Main(string[] args)
         {
-            PayloadProcessor._Init();
+            PayloadSolver._Init();
             CreateHostBuilder(args).Build().Run();
         }
 
