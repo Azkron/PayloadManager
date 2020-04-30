@@ -12,25 +12,20 @@ namespace PayloadManager.Model
         public int pmax { get; set; }
     }
 
-    public class PowerAssingment
+    public class PowerplantInfo
     {
 
         private Powerplant powerplant;
+        public string name => powerplant.name;
         public float costPerUnit;
         public int pmin;
         public int pmax;
-        public int p;
-        public AssingmentResult result => new AssingmentResult() { name = powerplant.name, p = p };
 
-        public PowerAssingment(Powerplant powerplant)
+        public PowerplantInfo(Powerplant powerplant)
         {
             this.powerplant = powerplant;
+            pmin = powerplant.pmin;
+            pmax = powerplant.pmax;
         }
-    }
-
-    public struct AssingmentResult
-    {
-        public string name { get; set; }
-        public int p { get; set; }
     }
 }

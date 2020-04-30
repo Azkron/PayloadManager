@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PayloadManager.Components;
 using PayloadManager.Model;
+using System.Collections.Generic;
+using static PayloadManager.Components.PayloadProcessor;
 
 namespace PayloadManager.Controllers
 {
@@ -39,10 +41,9 @@ namespace PayloadManager.Controllers
 
         // POST: api/Payload
         [HttpPost]
-        public AssingmentResult[] Post([FromBody] Payload payload)
+        public Assingment[] Post([FromBody] Payload payload)
         {
-            AssingmentResult[] results = PayloadProcessor.Process(payload);
-            return results;
+            return Process(payload);
             //return new JsonResult(results);
         }
 
