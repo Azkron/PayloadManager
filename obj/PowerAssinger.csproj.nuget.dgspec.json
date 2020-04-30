@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PayloadManager.csproj": {}
+    "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PayloadManager.csproj": {
+    "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PayloadManager.csproj",
+        "projectUniqueName": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj",
         "projectName": "PowerAssinger",
-        "projectPath": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PayloadManager.csproj",
+        "projectPath": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj",
         "packagesPath": "C:\\Users\\Hugo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\obj\\",
         "projectStyle": "PackageReference",

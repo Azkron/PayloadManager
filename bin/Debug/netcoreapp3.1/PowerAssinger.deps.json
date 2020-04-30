@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "PayloadManager/1.0.0": {
+      "PowerAssinger/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.SignalR.Core": "2.4.1",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
@@ -314,10 +314,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "PayloadManager.dll": {}
+          "PowerAssinger.dll": {}
         },
         "compile": {
-          "PayloadManager.dll": {}
+          "PowerAssinger.dll": {}
         }
       },
       "Microsoft.AspNet.SignalR.Core/2.4.1": {
@@ -3484,7 +3484,7 @@
     }
   },
   "libraries": {
-    "PayloadManager/1.0.0": {
+    "PowerAssinger/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

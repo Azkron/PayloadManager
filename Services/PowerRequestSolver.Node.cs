@@ -1,12 +1,12 @@
-﻿using PayloadManager.Model;
+﻿using PowerAssinger.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PayloadManager.Components
+namespace PowerAssinger.Services
 {
-    public static partial class PayloadSolver
+    public static partial class PowerRequestSolver
     {
         private class Node
         {
@@ -36,7 +36,7 @@ namespace PayloadManager.Components
 
             private void AddNext(PowerplantInfo info)
             {
-                int pNeeded = _payload.load - totalP;
+                int pNeeded = _powerRequest.load - totalP;
                 int p;
                 if (pNeeded >= info.pmax)
                     p = info.pmax;
@@ -54,7 +54,7 @@ namespace PayloadManager.Components
 
                 CalculateTotalPAndCost();
 
-                done = totalP == _payload.load;
+                done = totalP == _powerRequest.load;
             }
 
             private void ReducePreviousP(int toReduce)
@@ -93,7 +93,7 @@ namespace PayloadManager.Components
                 foreach (Node node in connections)
                 {
                     // save nodes with the least surplus and best cost in case there is no perfect solution
-                    if (node.totalP > _payload.load)
+                    if (node.totalP > _powerRequest.load)
                         if( node.totalP < _closestP)
                         {
                             _minAverageCost = node.averageCost;

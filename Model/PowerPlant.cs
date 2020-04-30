@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PayloadManager.Model
+namespace PowerAssinger.Model
 {
     public class Powerplant
     {

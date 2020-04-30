@@ -1,14 +1,14 @@
-﻿using PayloadManager.Model;
+﻿using PowerAssinger.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PayloadManager.Components
+namespace PowerAssinger.Services
 {
-    public static partial class PayloadSolver
+    public static partial class PowerRequestSolver
     {
-        private static Payload _payload;
+        private static PowerRequest _powerRequest;
         private static Dictionary<string,
             Func<Powerplant, Dictionary<string, float>, PowerplantInfo>> _infoBuilders;
         private static float _minAverageCost = 9999f;
@@ -45,9 +45,9 @@ namespace PayloadManager.Components
             };
         }
 
-        public static Assingment[] Process(Payload payload)
+        public static Assingment[] Solve(PowerRequest payload)
         {
-            _payload = payload;
+            _powerRequest = payload;
             _infos = new List<PowerplantInfo>();
             foreach (Powerplant p in payload.powerPlants)
                 _infos.Add(_infoBuilders[p.type](p, payload.fuels));
@@ -67,7 +67,7 @@ namespace PayloadManager.Components
             int totalMaxP = 0;
             foreach (PowerplantInfo info in _infos)
                 totalMaxP += info.pmax;
-            return totalMaxP > _payload.load;
+            return totalMaxP > _powerRequest.load;
         }
 
         private static Assingment[] GetMaxAssingments()
@@ -80,9 +80,9 @@ namespace PayloadManager.Components
 
         private static void ResetGraph()
         {
-            _closestP = _payload.load + 9999;
+            _closestP = int.MaxValue;
             _lastNode = null;
-            _bestAverage = 9999f;
+            _bestAverage = float.MaxValue;
             _nodes = new List<Node>();
         }
 

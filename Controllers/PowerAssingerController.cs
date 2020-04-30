@@ -1,19 +1,19 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PayloadManager.Components;
-using PayloadManager.Model;
+using PowerAssinger.Services;
+using PowerAssinger.Model;
 using System.Collections.Generic;
-using static PayloadManager.Components.PayloadSolver;
+using static PowerAssinger.Services.PowerRequestSolver;
 
-namespace PayloadManager.Controllers
+namespace PowerAssinger.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PayloadController : ControllerBase
+    public class PowerAssingerController : ControllerBase
     {
-        private readonly ILogger<PayloadController> _logger;
-        public PayloadController(ILogger<PayloadController> logger)
+        private readonly ILogger<PowerAssingerController> _logger;
+        public PowerAssingerController(ILogger<PowerAssingerController> logger)
         {
             _logger = logger;
         }
@@ -39,11 +39,11 @@ namespace PayloadManager.Controllers
             return "value";
         }
 
-        // POST: api/Payload
+        // POST: api/PowerAssinger
         [HttpPost]
-        public Assingment[] Post([FromBody] Payload payload)
+        public Assingment[] Post([FromBody] PowerRequest payload)
         {
-            return Process(payload);
+            return Solve(payload);
             //return new JsonResult(results);
         }
 

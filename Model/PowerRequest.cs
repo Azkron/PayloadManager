@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace PayloadManager.Model
+namespace PowerAssinger.Model
 {
-    public class Payload
+    public class PowerRequest
     {
         public int load { get; set; }
         public Dictionary<string, float> fuels { get; set; }

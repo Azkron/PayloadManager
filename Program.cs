@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using PayloadManager.Components;
+using PowerAssinger.Services;
 
 namespace PayloadManager
 {
@@ -14,7 +14,7 @@ namespace PayloadManager
     {
         public static void Main(string[] args)
         {
-            PayloadSolver._Init();
+            PowerRequestSolver._Init();
             CreateHostBuilder(args).Build().Run();
         }
 
