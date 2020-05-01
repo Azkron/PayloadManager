@@ -86,8 +86,6 @@ C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAna
 C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.csproj.CoreCompileInputs.cache
-C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.AssemblyInfoInputs.cache
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.AssemblyInfo.cs
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.RazorTargetAssemblyInfo.cache
@@ -98,3 +96,18 @@ C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.dll
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.pdb
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.genruntimeconfig.cache
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.csprojAssemblyReference.cache
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.TraceSource.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Serilog.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
+C:\Users\Hugo\Desktop\PowerAssinger\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
+C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.csproj.CoreCompileInputs.cache
+C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.MvcApplicationPartsAssemblyInfo.cache
