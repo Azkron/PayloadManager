@@ -8,7 +8,7 @@ For testing I used Postmant for the payload POST(`https://localhost:5001/api/pow
 
 After a payload is recived the PowerAssigner webservice performs the following actions :
 	
-1. If the total avaliable power is equal lower than the load it responds by setting all powerplats assingments to pmax.
+1. If the total avaliable power is equal or lower than the load it responds by setting all powerplats assingments to pmax.
 	
 2. Else if the total avaliable power is higher than the load it performs an A* search (https://en.wikipedia.org/wiki/A*_search_algorithm) on a dinamically generated graph to find the most optimal solution.
 	
