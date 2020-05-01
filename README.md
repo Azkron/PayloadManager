@@ -7,8 +7,11 @@ This webservice can receive the payloads through a POST request on `https://loca
 For testing I used Postmant for the payload POST(`https://localhost:5001/api/powerAssinger`) and I have develop a simple Angular 9 app, PowerAssingerViewer (https://github.com/Azkron/PowerAssignerViewer) that connects to the socket(`https://localhost:5001/assingments`) and displays the messages in a fancy way, the repository contains instructions on how to build and run it. 
 
 After a payload is recived the PowerAssigner webservice performs the following actions :
+	
 	- If the total avaliable power is equal lower than the load it responds by setting all powerplats assingments to pmax.
+	
 	- Else if the total avaliable power is higher than the load it performs an A* search (https://en.wikipedia.org/wiki/A*_search_algorithm) on a dinamically generated graph to find the most optimal solution.
+	
 	- In the marginal case where there is no possible exact solution because of the pmin then it will use the solution that wastes the least energy possible while still having the price into account.
 
 The CO2 is always taken into account for the gas-fired plants.
