@@ -19,7 +19,7 @@ The CO2 is always taken into account for the gas-fired plants.
 All request, responses, actions and errors are logged both in the console and in the file `powerAssingerLogs.txt` at the root of the project. But it would be easy to also store the logs in a database by simply configuring `Serilog` in the Program.cs file.
 
 # Build
-This app was created using Visual Studio 2019, you have problems building make sure your Visual Studio 2019 installation includes `ASP.NET`, `.NET desktop development` and `.NET Core cross platform development`
+This app was created using Visual Studio 2019. If you have problems building make sure your Visual Studio 2019 installation includes `ASP.NET`, `.NET desktop development` and `.NET Core cross platform development`
 
 # .exe
 In case you cannot or dont have the time to build the app there is a .exe at `bin\Release\netcoreapp3.1\PowerAssinger.exe`
