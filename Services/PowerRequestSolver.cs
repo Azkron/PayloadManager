@@ -1,4 +1,5 @@
-﻿using PowerAssinger.Model;
+﻿using Microsoft.Extensions.Logging;
+using PowerAssinger.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,109 +7,97 @@ using System.Threading.Tasks;
 
 namespace PowerAssinger.Services
 {
-    public static partial class PowerRequestSolver
+    public partial class PowerRequestSolver
     {
-        private static PowerRequest _powerRequest;
-        private static Dictionary<string,
-            Func<Powerplant, Dictionary<string, float>, PowerplantInfo>> _infoBuilders;
-        private static float _minAverageCost = 9999f;
-        private static List<Node> _nodes;
-        private static Node _lastNode;
-        private static int _closestP;
-        private static float _bestAverage;
-        private static List<PowerplantInfo> _infos;
-        public static void _Init()
+        private PowerRequest powerRequest;
+        private List<Node> nodes;
+        private List<PowerplantInfo> infos;
+        private ILogger<PowerRequestSolver> logger;
+
+        public PowerRequestSolver(ILogger<PowerRequestSolver> logger)
         {
-            _infoBuilders = new Dictionary<string,
-                Func<Powerplant, Dictionary<string, float>, PowerplantInfo>>();
-
-            _infoBuilders["gasfired"] = (Powerplant plant, Dictionary<string, float> fuels) =>
-            {
-                PowerplantInfo info = new PowerplantInfo(plant);
-                info.costPerUnit = fuels["gas(euro/MWh)"] * (1f / plant.efficiency);
-                info.costPerUnit += fuels["co2(euro/ton)"] * 0.3f;
-                return info;
-            };
-
-            _infoBuilders["turbojet"] = (Powerplant plant, Dictionary<string, float> fuels) =>
-            {
-                PowerplantInfo info = new PowerplantInfo(plant);
-                info.costPerUnit = fuels["kerosine(euro/MWh)"] * (1f / plant.efficiency);
-                return info;
-            };
-
-            _infoBuilders["windturbine"] = (Powerplant plant, Dictionary<string, float> fuels) =>
-            {
-                PowerplantInfo info = new PowerplantInfo(plant);
-                info.pmax = (int)(plant.pmax * (fuels["wind(%)"] / 100f));
-                return info;
-            };
+            this.logger = logger;
         }
 
-        public static Assingment[] Solve(PowerRequest powerRequest)
+        public Assingment[] Solve(PowerRequest powerRequest)
         {
-            _powerRequest = powerRequest;
-            _infos = new List<PowerplantInfo>();
-            foreach (Powerplant p in _powerRequest.powerPlants)
-                _infos.Add(_infoBuilders[p.type](p, _powerRequest.fuels));
+            this.powerRequest = powerRequest;
+            infos = new List<PowerplantInfo>();
+            foreach (Powerplant p in powerRequest.powerPlants)
+                infos.Add(new PowerplantInfo(p, powerRequest.fuels));
 
-            if(!PowerSurplus())
+            if (!PowerSurplus())
                 return GetMaxAssingments();
             else
             {
-                _infos.Sort((p1, p2) => p1.costPerUnit < p2.costPerUnit ? -1 : 1);
-                Node node = AstarSearch(_infos);
+                infos.Sort((p1, p2) => p1.costPerUnit < p2.costPerUnit ? -1 : 1);
+                Node node = AstarSearch(infos);
                 return node.GetAssingments();
             }
         }
 
-        private static bool PowerSurplus()
+        private bool PowerSurplus()
         {
             int totalMaxP = 0;
-            foreach (PowerplantInfo info in _infos)
+            foreach (PowerplantInfo info in infos)
                 totalMaxP += info.pmax;
-            return totalMaxP > _powerRequest.load;
+
+            if(totalMaxP < powerRequest.load)
+                logger.LogInformation(LoggingEvents.DeficientSolutionFound, 
+                    "Not enough total avaliable power ({totalMaxP}) to meet load ({powerRequest.load}), a defficient solution will be created anyway", 
+                    totalMaxP, powerRequest.load);
+
+            return totalMaxP > powerRequest.load;
         }
 
-        private static Assingment[] GetMaxAssingments()
+        private Assingment[] GetMaxAssingments()
         {
-            Assingment[] assingments = new Assingment[_infos.Count];
+            Assingment[] assingments = new Assingment[infos.Count];
             for (int i = 0; i < assingments.Length; ++i)
-                assingments[i] = new Assingment() { name = _infos[i].name, p = _infos[i].pmax };
+                assingments[i] = new Assingment() { name = infos[i].name, p = infos[i].pmax };
             return assingments;
         }
 
-        private static void ResetGraph()
+        private void ResetGraph()
         {
-            _closestP = int.MaxValue;
-            _lastNode = null;
-            _bestAverage = float.MaxValue;
-            _nodes = new List<Node>();
+            nodes = new List<Node>();
         }
 
-        private static Node AstarSearch(List<PowerplantInfo> infos)
+        private Node AstarSearch(List<PowerplantInfo> infos)
         {
             ResetGraph();
-            _nodes.Add(new Node(infos));
-            while (_nodes.Count > 0)
+            nodes.Add(new Node(infos, powerRequest));
+            Node perfectSolutionNode = null;
+            while (nodes.Count > 0)
             {
-                _nodes.Sort(Node.Comparer);
-                Node node = _nodes[0];
+                nodes.Sort(Node.Comparer);
+                Node node = nodes[0];
                 if (node.done)
                 {
-                    _lastNode = node;
+                    perfectSolutionNode = node;
                     break;
                 }
                 else
                 {
-                    _nodes.RemoveAt(0);
-                    _minAverageCost = node.averageCost;
-                    node.Explore();
+                    nodes.RemoveAt(0);
+                    nodes.AddRange(node.Explore());
                 }
             }
 
-            // TODO return node based on done, surpass quantity, average
-            return _lastNode;
+            if (perfectSolutionNode != null)
+            {
+                logger.LogInformation(LoggingEvents.PerfectSolutionFound,
+                    "Perfect power assingment solution found");
+                return perfectSolutionNode;
+            }
+            else
+            {
+                int waste = Node._closestP - powerRequest.load;
+                logger.LogInformation(LoggingEvents.SurplusSolutionFound,
+                    "Best possible solution allocates {Node._closestP} power for a load {powerRequest.load}, wasting {waste} power", Node._closestP, powerRequest.load, waste);
+
+                return Node._lastBestNode;
+            }
         }
 
 

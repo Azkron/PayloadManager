@@ -6,24 +6,40 @@ using System.Threading.Tasks;
 
 namespace PowerAssinger.Services
 {
-    public static partial class PowerRequestSolver
+    public partial class PowerRequestSolver
     {
         private class Node
         {
+            private static PowerRequest _powerRequest;
+            public static int _closestP { get; private set; }
+            public static Node _lastBestNode { get; private set; }
+            public static float _minAverageCost { get; private set; }
+
             List<Node> connections;
             List<PowerplantInfo> unused = new List<PowerplantInfo>();
             List<PowerplantInfo> used = new List<PowerplantInfo>();
             List<int> ps = new List<int>();
             int totalP;
-            float totalCost;
+            public float totalCost { get; private set; }
             public float averageCost { get; private set; }
             public bool done { get; private set; }
 
-            public Node(List<PowerplantInfo> unused)
+            private static void ResetGrapth()
             {
+                _closestP = int.MaxValue;
+                _lastBestNode = null;
+                _minAverageCost = float.MaxValue;
+            }
+
+            // for the initial node
+            public Node(List<PowerplantInfo> unused, PowerRequest powerRequest)
+            {
+                _powerRequest = powerRequest;
+                ResetGrapth();
                 this.unused.AddRange(unused);
             }
 
+            // for all child nodes
             public Node(Node prev, int nextToUse)
             {
                 unused.AddRange(prev.unused);
@@ -87,26 +103,20 @@ namespace PowerAssinger.Services
                 averageCost = totalCost / totalP;
             }
 
-            public void Explore()
+            public List<Node> Explore()
             {
+                _minAverageCost = averageCost;
                 BuildConnections();
                 foreach (Node node in connections)
-                {
-                    // save nodes with the least surplus and best cost in case there is no perfect solution
-                    if (node.totalP > _powerRequest.load)
-                        if( node.totalP < _closestP)
-                        {
-                            _minAverageCost = node.averageCost;
-                            _lastNode = node;
-                        }
-                        else if (node.totalP == _closestP && node.averageCost < _minAverageCost)
-                        {
-                            _minAverageCost = node.averageCost;
-                            _lastNode = node;
-                        }
+                    if (node.totalP > _powerRequest.load &&
+                        (node.totalP < _closestP || (node.totalP == _closestP && node.averageCost < _minAverageCost)))
+                    {
+                        _closestP = node.totalP;
+                        _minAverageCost = node.averageCost;
+                        _lastBestNode = node;
+                    }
 
-                    _nodes.Add(node);
-                }
+                return connections;
             }
 
             private void BuildConnections()
