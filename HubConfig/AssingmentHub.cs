@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 namespace PowerAssinger.HubConfig
 {
-    [HubName("PowerHub")]
-    public class PowerHub : Hub
+    [HubName("assingmentHub")]
+    public class AssingmentsHub : Hub
     {
         //private readonly TimeSpan _updateInterval = TimeSpan.FromMilliseconds(1000);
         //private static int currentId = 0;

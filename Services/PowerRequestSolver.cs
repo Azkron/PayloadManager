@@ -45,12 +45,12 @@ namespace PowerAssinger.Services
             };
         }
 
-        public static Assingment[] Solve(PowerRequest payload)
+        public static Assingment[] Solve(PowerRequest powerRequest)
         {
-            _powerRequest = payload;
+            _powerRequest = powerRequest;
             _infos = new List<PowerplantInfo>();
-            foreach (Powerplant p in payload.powerPlants)
-                _infos.Add(_infoBuilders[p.type](p, payload.fuels));
+            foreach (Powerplant p in _powerRequest.powerPlants)
+                _infos.Add(_infoBuilders[p.type](p, _powerRequest.fuels));
 
             if(!PowerSurplus())
                 return GetMaxAssingments();

@@ -97,3 +97,4 @@ C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\staticwebassets\Powe
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.dll
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.pdb
 C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.genruntimeconfig.cache
+C:\Users\Hugo\Desktop\PowerAssinger\obj\Debug\netcoreapp3.1\PowerAssinger.csprojAssemblyReference.cache

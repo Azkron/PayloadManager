@@ -29,7 +29,7 @@ namespace PayloadManager
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", builder => builder
-                //.WithOrigins("http://localhost:4200")
+                .WithOrigins("http://localhost:4200")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials());
@@ -57,7 +57,7 @@ namespace PayloadManager
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<PowerHub>("/assingments");
+                endpoints.MapHub<AssingmentsHub>("/assingments");
             });
         }
     }
