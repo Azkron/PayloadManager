@@ -7,6 +7,6 @@ namespace PowerAssinger.Model
     {
         public int load { get; set; }
         public Dictionary<string, float> fuels { get; set; }
-        public Powerplant[] powerPlants { get; set; }
+        public Powerplant[] powerplants { get; set; }
     }
 }

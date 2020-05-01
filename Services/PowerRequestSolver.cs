@@ -23,7 +23,7 @@ namespace PowerAssinger.Services
         {
             this.powerRequest = powerRequest;
             infos = new List<PowerplantInfo>();
-            foreach (Powerplant p in powerRequest.powerPlants)
+            foreach (Powerplant p in powerRequest.powerplants)
                 infos.Add(new PowerplantInfo(p, powerRequest.fuels));
 
             if (!PowerSurplus())
