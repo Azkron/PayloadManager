@@ -4,11 +4,13 @@
 
 After a payload is received the PowerAssigner webservice performs the following actions :
 	
-1. If the total avaliable power is equal or lower than the load it responds by setting all powerplants assingments to pmax.
+1. If the total avaliable power is equal or lower than the load it will set all powerplants assingments to pmax.
 	
 2. Else if the total avaliable power is higher than the load it performs an A* search (https://en.wikipedia.org/wiki/A*_search_algorithm) on a dinamically generated graph to find an optimal solution. This algorithm will remain highly performant regardless of the size of the power load and/or the number of powerplants.
 	
 3. In the marginal case where there is no possible exact solution because of the pmin then it will use the solution that wastes the least energy possible while still having the price into account.
+
+4. After the assingments are calcualted it will answer the POST with the assingments and it will also broadcast both the request and the assingments through a socket connection.
 
 The CO2 is always taken into account for the gas-fired plants.
 
