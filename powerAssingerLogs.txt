@@ -1360,3 +1360,235 @@
 2020-05-01 19:28:04.837 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 244.4306ms
 2020-05-01 19:28:04.837 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
 2020-05-01 19:28:04.837 +02:00 [INF] Request finished in 257.0899ms 200 application/json; charset=utf-8
+2020-05-04 21:58:52.721 +02:00 [INF] Now listening on: https://localhost:5001
+2020-05-04 21:58:52.746 +02:00 [INF] Now listening on: http://localhost:5000
+2020-05-04 21:58:52.751 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-04 21:58:52.751 +02:00 [INF] Hosting environment: Development
+2020-05-04 21:58:52.751 +02:00 [INF] Content root path: C:\Users\Hugo\Desktop\Hugo_Barbachano_powerplant-coding-challenge\PowerAssinger
+2020-05-04 21:59:38.584 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/powerAssinger  
+2020-05-04 21:59:38.584 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/assingments/negotiate  
+2020-05-04 21:59:38.637 +02:00 [INF] CORS policy execution successful.
+2020-05-04 21:59:38.637 +02:00 [INF] CORS policy execution successful.
+2020-05-04 21:59:38.646 +02:00 [INF] Request finished in 67.5143ms 204 
+2020-05-04 21:59:38.647 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 21:59:38.670 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/assingments/negotiate text/plain;charset=UTF-8 0
+2020-05-04 21:59:38.671 +02:00 [INF] CORS policy execution successful.
+2020-05-04 21:59:38.671 +02:00 [INF] Executing endpoint '/assingments/negotiate'
+2020-05-04 21:59:38.699 +02:00 [INF] Executed endpoint '/assingments/negotiate'
+2020-05-04 21:59:38.700 +02:00 [INF] Request finished in 30.1993ms 200 application/json
+2020-05-04 21:59:38.708 +02:00 [INF] Route matched with {action = "Get", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 21:59:38.714 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/assingments?id=3Qu-Lm7pjogoQ9kVt9Jtpw  
+2020-05-04 21:59:38.714 +02:00 [INF] CORS policy execution successful.
+2020-05-04 21:59:38.714 +02:00 [INF] Executing endpoint '/assingments'
+2020-05-04 21:59:38.717 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-05-04 21:59:38.748 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger) in 28.8575ms
+2020-05-04 21:59:38.750 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 21:59:38.750 +02:00 [INF] Request finished in 173.2733ms 200 application/json; charset=utf-8
+2020-05-04 21:59:43.472 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 21:59:43.472 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 21:59:43.488 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 21:59:43.902 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 21:59:43.910 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 21:59:43.917 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 21:59:43.936 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 21:59:43.937 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 449.0607ms
+2020-05-04 21:59:43.938 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 21:59:43.938 +02:00 [INF] Request finished in 466.5059ms 200 application/json; charset=utf-8
+2020-05-04 22:07:22.011 +02:00 [INF] Now listening on: https://localhost:5001
+2020-05-04 22:07:22.025 +02:00 [INF] Now listening on: http://localhost:5000
+2020-05-04 22:07:22.028 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-04 22:07:22.028 +02:00 [INF] Hosting environment: Development
+2020-05-04 22:07:22.028 +02:00 [INF] Content root path: C:\Users\Hugo\Desktop\Hugo_Barbachano_powerplant-coding-challenge\PowerAssinger
+2020-05-04 22:07:47.702 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/powerAssinger  
+2020-05-04 22:07:47.702 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/assingments/negotiate  
+2020-05-04 22:07:47.763 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:07:47.763 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:07:47.771 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:07:47.771 +02:00 [INF] Request finished in 74.3276ms 204 
+2020-05-04 22:07:47.795 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/assingments/negotiate text/plain;charset=UTF-8 0
+2020-05-04 22:07:47.797 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:07:47.798 +02:00 [INF] Executing endpoint '/assingments/negotiate'
+2020-05-04 22:07:47.818 +02:00 [INF] Executed endpoint '/assingments/negotiate'
+2020-05-04 22:07:47.819 +02:00 [INF] Request finished in 23.942ms 200 application/json
+2020-05-04 22:07:47.820 +02:00 [INF] Route matched with {action = "Get", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:07:47.827 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-05-04 22:07:47.829 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/assingments?id=nUFn7nf1mwMhaOX4DhA6hA  
+2020-05-04 22:07:47.830 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:07:47.830 +02:00 [INF] Executing endpoint '/assingments'
+2020-05-04 22:07:47.855 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger) in 26.8899ms
+2020-05-04 22:07:47.856 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:07:47.857 +02:00 [INF] Request finished in 161.3196ms 200 application/json; charset=utf-8
+2020-05-04 22:07:49.550 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:07:49.550 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:07:49.564 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:07:49.807 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:07:49.813 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:07:49.819 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:07:49.833 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:07:49.835 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 270.7233ms
+2020-05-04 22:07:49.835 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:07:49.835 +02:00 [INF] Request finished in 285.4823ms 200 application/json; charset=utf-8
+2020-05-04 22:08:37.653 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 992
+2020-05-04 22:08:37.653 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:08:37.654 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:08:37.655 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":0.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:08:37.656 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:08:37.656 +02:00 [INF] Assingments: [{"name":"gasfiredbig1","p":380},{"name":"gasfiredbig2","p":100},{"name":"windpark1","p":0},{"name":"windpark2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:08:37.657 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:08:37.657 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 3.3753ms
+2020-05-04 22:08:37.657 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:08:37.658 +02:00 [INF] Request finished in 5.0873ms 200 application/json; charset=utf-8
+2020-05-04 22:08:51.254 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:08:51.255 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:08:51.256 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:08:51.259 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:08:51.260 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:08:51.262 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:08:51.264 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:08:51.265 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 9.1634ms
+2020-05-04 22:08:51.266 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:08:51.266 +02:00 [INF] Request finished in 12.5158ms 200 application/json; charset=utf-8
+2020-05-04 22:09:02.618 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:09:02.619 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:09:02.620 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:09:02.622 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:09:02.622 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:09:02.622 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:09:02.623 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:09:02.624 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 3.4952ms
+2020-05-04 22:09:02.624 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:09:02.625 +02:00 [INF] Request finished in 6.8461ms 200 application/json; charset=utf-8
+2020-05-04 22:09:03.834 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:09:03.836 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:09:03.837 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:09:03.840 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:09:03.840 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:09:03.840 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:09:03.842 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:09:03.842 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 4.9129ms
+2020-05-04 22:09:03.842 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:09:03.843 +02:00 [INF] Request finished in 8.8235ms 200 application/json; charset=utf-8
+2020-05-04 22:09:06.567 +02:00 [INF] Executed endpoint '/assingments'
+2020-05-04 22:09:06.568 +02:00 [INF] Request finished in 78739.214ms 101 
+2020-05-04 22:09:06.992 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/assingments/negotiate  
+2020-05-04 22:09:06.992 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:09:06.993 +02:00 [INF] Request finished in 1.6284ms 204 
+2020-05-04 22:09:06.994 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/powerAssinger  
+2020-05-04 22:09:06.994 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:09:06.994 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:09:06.995 +02:00 [INF] Route matched with {action = "Get", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:09:06.995 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-05-04 22:09:06.996 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger) in 0.7908ms
+2020-05-04 22:09:06.996 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:09:06.996 +02:00 [INF] Request finished in 1.806ms 200 application/json; charset=utf-8
+2020-05-04 22:09:06.996 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/assingments/negotiate text/plain;charset=UTF-8 0
+2020-05-04 22:09:06.997 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:09:06.997 +02:00 [INF] Executing endpoint '/assingments/negotiate'
+2020-05-04 22:09:06.997 +02:00 [INF] Executed endpoint '/assingments/negotiate'
+2020-05-04 22:09:06.997 +02:00 [INF] Request finished in 0.924ms 200 application/json
+2020-05-04 22:09:07.033 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/assingments?id=_4rShq_m_07GIZZD1Bswlg  
+2020-05-04 22:09:07.033 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:09:07.033 +02:00 [INF] Executing endpoint '/assingments'
+2020-05-04 22:09:09.077 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:09:09.077 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:09:09.078 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:09:09.081 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:09:09.081 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:09:09.082 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:09:09.083 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:09:09.083 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 5.3805ms
+2020-05-04 22:09:09.084 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:09:09.084 +02:00 [INF] Request finished in 7.6838ms 200 application/json; charset=utf-8
+2020-05-04 22:16:16.388 +02:00 [INF] Executed endpoint '/assingments'
+2020-05-04 22:16:16.390 +02:00 [INF] Request finished in 429356.0503ms 101 
+2020-05-04 22:16:17.184 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/assingments/negotiate  
+2020-05-04 22:16:17.185 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/powerAssinger  
+2020-05-04 22:16:17.185 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:17.185 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:17.185 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:16:17.186 +02:00 [INF] Request finished in 1.9491ms 204 
+2020-05-04 22:16:17.186 +02:00 [INF] Route matched with {action = "Get", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:16:17.187 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-05-04 22:16:17.189 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger) in 2.6315ms
+2020-05-04 22:16:17.189 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:16:17.190 +02:00 [INF] Request finished in 5.1934ms 200 application/json; charset=utf-8
+2020-05-04 22:16:17.200 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/assingments/negotiate text/plain;charset=UTF-8 0
+2020-05-04 22:16:17.200 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:17.200 +02:00 [INF] Executing endpoint '/assingments/negotiate'
+2020-05-04 22:16:17.201 +02:00 [INF] Executed endpoint '/assingments/negotiate'
+2020-05-04 22:16:17.201 +02:00 [INF] Request finished in 1.2079ms 200 application/json
+2020-05-04 22:16:17.378 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/assingments?id=rIP6muHn3mDXX5N_oWbvPg  
+2020-05-04 22:16:17.378 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:17.378 +02:00 [INF] Executing endpoint '/assingments'
+2020-05-04 22:16:22.093 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:16:22.094 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:16:22.094 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:16:22.096 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:16:22.096 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:16:22.096 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:16:22.097 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:16:22.097 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 2.6498ms
+2020-05-04 22:16:22.097 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:16:22.097 +02:00 [INF] Request finished in 4.3421ms 200 application/json; charset=utf-8
+2020-05-04 22:16:37.413 +02:00 [INF] Executed endpoint '/assingments'
+2020-05-04 22:16:37.414 +02:00 [INF] Request finished in 20035.9334ms 101 
+2020-05-04 22:16:38.219 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/powerAssinger  
+2020-05-04 22:16:38.220 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/assingments/negotiate  
+2020-05-04 22:16:38.220 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:38.220 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:38.220 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:16:38.221 +02:00 [INF] Request finished in 1.6332ms 204 
+2020-05-04 22:16:38.221 +02:00 [INF] Route matched with {action = "Get", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:16:38.223 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-05-04 22:16:38.224 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger) in 2.3597ms
+2020-05-04 22:16:38.224 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:16:38.250 +02:00 [INF] Request finished in 6.8992ms 200 application/json; charset=utf-8
+2020-05-04 22:16:38.253 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/assingments/negotiate text/plain;charset=UTF-8 0
+2020-05-04 22:16:38.253 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:38.254 +02:00 [INF] Executing endpoint '/assingments/negotiate'
+2020-05-04 22:16:38.255 +02:00 [INF] Executed endpoint '/assingments/negotiate'
+2020-05-04 22:16:38.256 +02:00 [INF] Request finished in 3.3972ms 200 application/json
+2020-05-04 22:16:38.494 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/assingments?id=hOPOMJAlLA73RE_aky-7Cw  
+2020-05-04 22:16:38.495 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:16:38.495 +02:00 [INF] Executing endpoint '/assingments'
+2020-05-04 22:16:41.472 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:16:41.472 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:16:41.473 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:16:41.483 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:16:41.483 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:16:41.483 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:16:41.484 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:16:41.485 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 11.4434ms
+2020-05-04 22:16:41.485 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:16:41.485 +02:00 [INF] Request finished in 13.0842ms 200 application/json; charset=utf-8
+2020-05-04 22:18:44.364 +02:00 [INF] Executed endpoint '/assingments'
+2020-05-04 22:18:44.365 +02:00 [INF] Request finished in 125870.3501ms 101 
+2020-05-04 22:18:45.292 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/powerAssinger  
+2020-05-04 22:18:45.292 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/assingments/negotiate  
+2020-05-04 22:18:45.292 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:18:45.292 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:18:45.293 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:18:45.293 +02:00 [INF] Request finished in 0.8624ms 204 
+2020-05-04 22:18:45.293 +02:00 [INF] Route matched with {action = "Get", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:18:45.294 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-05-04 22:18:45.294 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger) in 1.0919ms
+2020-05-04 22:18:45.295 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Get (PowerAssinger)'
+2020-05-04 22:18:45.295 +02:00 [INF] Request finished in 3.3603ms 200 application/json; charset=utf-8
+2020-05-04 22:18:45.305 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/assingments/negotiate text/plain;charset=UTF-8 0
+2020-05-04 22:18:45.306 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:18:45.306 +02:00 [INF] Executing endpoint '/assingments/negotiate'
+2020-05-04 22:18:45.307 +02:00 [INF] Executed endpoint '/assingments/negotiate'
+2020-05-04 22:18:45.307 +02:00 [INF] Request finished in 8.6799ms 200 application/json
+2020-05-04 22:18:45.490 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/assingments?id=5ePUnBDVae5ByRlGvMxFCQ  
+2020-05-04 22:18:45.490 +02:00 [INF] CORS policy execution successful.
+2020-05-04 22:18:45.490 +02:00 [INF] Executing endpoint '/assingments'
+2020-05-04 22:18:48.677 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/powerAssinger application/json 993
+2020-05-04 22:18:48.677 +02:00 [INF] Executing endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:18:48.677 +02:00 [INF] Route matched with {action = "Post", controller = "PowerAssinger"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(PowerAssinger.Model.PowerRequest) on controller PowerAssinger.Controllers.PowerAssingerController (PowerAssinger).
+2020-05-04 22:18:48.680 +02:00 [INF] New Power request: {"load":480,"fuels":{"gas(euro/MWh)":13.4,"kerosine(euro/MWh)":50.8,"co2(euro/ton)":20.0,"wind(%)":60.0},"powerplants":[{"name":"gasfiredbig1","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredbig2","type":"gasfired","efficiency":0.53,"pmin":100,"pmax":460},{"name":"gasfiredsomewhatsmaller","type":"gasfired","efficiency":0.37,"pmin":40,"pmax":210},{"name":"tj1","type":"turbojet","efficiency":0.3,"pmin":0,"pmax":16},{"name":"windpark1","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":150},{"name":"windpark2","type":"windturbine","efficiency":1.0,"pmin":0,"pmax":36}]}
+2020-05-04 22:18:48.680 +02:00 [INF] Perfect power assingment solution found
+2020-05-04 22:18:48.680 +02:00 [INF] Assingments: [{"name":"windpark1","p":90},{"name":"windpark2","p":21},{"name":"gasfiredbig1","p":369},{"name":"gasfiredbig2","p":0},{"name":"gasfiredsomewhatsmaller","p":0},{"name":"tj1","p":0}]
+2020-05-04 22:18:48.681 +02:00 [INF] Executing JsonResult, writing value of type 'PowerAssinger.Services.PowerRequestSolver+Assingment[]'.
+2020-05-04 22:18:48.682 +02:00 [INF] Executed action PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger) in 4.0915ms
+2020-05-04 22:18:48.682 +02:00 [INF] Executed endpoint 'PowerAssinger.Controllers.PowerAssingerController.Post (PowerAssinger)'
+2020-05-04 22:18:48.682 +02:00 [INF] Request finished in 5.7743ms 200 application/json; charset=utf-8

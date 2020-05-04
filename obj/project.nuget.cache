@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W2Fg/PrX9pGByhi698WyDVXmlPGcp2AGKGC28HrIj7XwLgzOUu+G0OrEi3j2rjkkfLqedUTI6vvGpqZ5C+GAdg==",
+  "dgSpecHash": "Kt4UTkGRhxCuRCBfS3hVXvORI2nV+uDAZB9TW93R12fmihyFBYX7YsM03V87D9VkJgBQFAHkBQrOmGuVJc5NRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj",
+  "projectFilePath": "C:\\Users\\Hugo\\Desktop\\Hugo_Barbachano_powerplant-coding-challenge\\PowerAssinger\\PowerAssinger.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.1\\microsoft.aspnet.signalr.core.2.4.1.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

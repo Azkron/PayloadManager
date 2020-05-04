@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj": {}
+    "C:\\Users\\Hugo\\Desktop\\Hugo_Barbachano_powerplant-coding-challenge\\PowerAssinger\\PowerAssinger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj": {
+    "C:\\Users\\Hugo\\Desktop\\Hugo_Barbachano_powerplant-coding-challenge\\PowerAssinger\\PowerAssinger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj",
+        "projectUniqueName": "C:\\Users\\Hugo\\Desktop\\Hugo_Barbachano_powerplant-coding-challenge\\PowerAssinger\\PowerAssinger.csproj",
         "projectName": "PowerAssinger",
-        "projectPath": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\PowerAssinger.csproj",
+        "projectPath": "C:\\Users\\Hugo\\Desktop\\Hugo_Barbachano_powerplant-coding-challenge\\PowerAssinger\\PowerAssinger.csproj",
         "packagesPath": "C:\\Users\\Hugo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hugo\\Desktop\\PowerAssinger\\obj\\",
+        "outputPath": "C:\\Users\\Hugo\\Desktop\\Hugo_Barbachano_powerplant-coding-challenge\\PowerAssinger\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

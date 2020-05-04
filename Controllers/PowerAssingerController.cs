@@ -42,8 +42,7 @@ namespace PowerAssinger.Controllers
                 LogPowerRequest(powerRequest);
                 Assingment[] assingments = powerRequestSolver.Solve(powerRequest);
                 LogAssingments(assingments);
-                RequestAssingments requestAssingments = new RequestAssingments(powerRequest, assingments);
-                hub.Clients.All.SendAsync("transferRequestAssingments", requestAssingments);
+                BroadcastRequestAssingments(powerRequest, assingments);
                 return new JsonResult(assingments);
             }
             catch(Exception ex)
@@ -52,6 +51,12 @@ namespace PowerAssinger.Controllers
 
                 return new StatusCodeResult(Microsoft.AspNetCore.Http.StatusCodes.Status400BadRequest);
             }
+        }
+
+        private void BroadcastRequestAssingments(PowerRequest powerRequest, Assingment[] assingments)
+        {
+            hub.Clients.All.SendAsync("transferRequestAssingments",
+                new RequestAssingments(powerRequest, assingments));
         }
 
         private void LogPowerRequest( PowerRequest powerRequest)
