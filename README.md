@@ -10,7 +10,7 @@ After a payload is received the PowerAssigner webservice performs the following 
 	
 1.c In the marginal case where there is no possible exact solution because of the pmin then it will use the solution that wastes the least energy possible while still having the price into account.
 
-4. After the assingments are calcualted it will answer the POST with the assingments and it will also broadcast both the request and the assingments through a socket connection.
+2. After the assingments are calcualted it will answer the POST with the assingments and it will also broadcast both the request and the assingments through a socket connection.
 
 The CO2 is always taken into account for the gas-fired plants.
 
