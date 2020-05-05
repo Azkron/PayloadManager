@@ -31,8 +31,7 @@ namespace PowerAssinger.Services
             else
             {
                 infos.Sort((p1, p2) => p1.costPerUnit < p2.costPerUnit ? -1 : 1);
-                Node node = AstarSearch(infos);
-                return node.GetAssingments();
+                return AstarSearch(infos).GetAssingments();
             }
         }
 
