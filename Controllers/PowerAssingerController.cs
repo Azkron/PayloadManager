@@ -27,12 +27,6 @@ namespace PowerAssinger.Controllers
             this.powerRequestSolver = new PowerRequestSolver(solverLogger);
         }
 
-        // GET: api/powerAssinger
-        public IActionResult Get()
-        {
-            return Ok(new { Message = "Request Completed" });
-        }
-
         // POST: api/powerAssinger
         [HttpPost]
         public IActionResult Post([FromBody] PowerRequest powerRequest)
@@ -47,11 +41,16 @@ namespace PowerAssinger.Controllers
             }
             catch(Exception ex)
             {
-                logger.LogInformation(LoggingEvents.ErrorWhileSolving, 
-                    "An error occured while solving a power request,  error message: {0}, HResult: {1}", 
-                    ex.Message, ex.HResult);
+                LogException(ex);
                 return new StatusCodeResult(Microsoft.AspNetCore.Http.StatusCodes.Status400BadRequest);
             }
+        }
+
+        private void LogException(Exception ex)
+        {
+            logger.LogInformation(LoggingEvents.ErrorWhileSolving,
+                "An error occured while solving a power request,  error message: {0}, HResult: {1}",
+                ex.Message, ex.HResult);
         }
 
         private void BroadcastRequestAssingments(PowerRequest powerRequest, Assingment[] assingments)
