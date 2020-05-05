@@ -22,17 +22,19 @@ namespace PowerAssinger.Services
         public Assingment[] Solve(PowerRequest powerRequest)
         {
             this.powerRequest = powerRequest;
+            SetPowerplantsInfos(powerRequest);
+
+            if (!PowerSurplus())
+                return MaxAssingments();
+            else
+                return AstarSearch(infos);
+        }
+
+        private void SetPowerplantsInfos(PowerRequest powerRequest)
+        {
             infos = new List<PowerplantInfo>();
             foreach (Powerplant p in powerRequest.powerplants)
                 infos.Add(new PowerplantInfo(p, powerRequest.fuels));
-
-            if (!PowerSurplus())
-                return GetMaxAssingments();
-            else
-            {
-                infos.Sort((p1, p2) => p1.costPerUnit < p2.costPerUnit ? -1 : 1);
-                return AstarSearch(infos).GetAssingments();
-            }
         }
 
         private bool PowerSurplus()
@@ -49,7 +51,7 @@ namespace PowerAssinger.Services
             return totalMaxP > powerRequest.load;
         }
 
-        private Assingment[] GetMaxAssingments()
+        private Assingment[] MaxAssingments()
         {
             Assingment[] assingments = new Assingment[infos.Count];
             for (int i = 0; i < assingments.Length; ++i)
@@ -62,8 +64,9 @@ namespace PowerAssinger.Services
             nodes = new List<Node>();
         }
 
-        private Node AstarSearch(List<PowerplantInfo> infos)
+        private Assingment[] AstarSearch(List<PowerplantInfo> infos)
         {
+            infos.Sort((p1, p2) => p1.costPerUnit < p2.costPerUnit ? -1 : 1);
             ResetGraph();
             nodes.Add(new Node(infos, powerRequest));
             Node perfectSolutionNode = null;
@@ -83,19 +86,19 @@ namespace PowerAssinger.Services
                 }
             }
 
+
             if (perfectSolutionNode != null)
             {
                 logger.LogInformation(LoggingEvents.PerfectSolutionFound,
                     "Perfect power assingment solution found");
-                return perfectSolutionNode;
+                return perfectSolutionNode.GetAssingments();
             }
             else
             {
                 int waste = Node._closestP - powerRequest.load;
                 logger.LogInformation(LoggingEvents.SurplusSolutionFound,
                     "Best possible solution allocates {Node._closestP} power for a load {powerRequest.load}, wasting {waste} power", Node._closestP, powerRequest.load, waste);
-
-                return Node._lastBestNode;
+                return Node._lastBestNode.GetAssingments();
             }
         }
 
