@@ -47,8 +47,9 @@ namespace PowerAssinger.Controllers
             }
             catch(Exception ex)
             {
-                logger.LogInformation(LoggingEvents.ErrorWhileSolving, "An error occured while solving a power request,  error message: {0}, HResult: {1}", ex.Message, ex.HResult);
-
+                logger.LogInformation(LoggingEvents.ErrorWhileSolving, 
+                    "An error occured while solving a power request,  error message: {0}, HResult: {1}", 
+                    ex.Message, ex.HResult);
                 return new StatusCodeResult(Microsoft.AspNetCore.Http.StatusCodes.Status400BadRequest);
             }
         }
