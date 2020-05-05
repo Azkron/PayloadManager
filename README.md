@@ -23,6 +23,3 @@ For testing I used Postman for the payload POST ( `https://localhost:5001/api/po
 
 # Build
 This app was created using Visual Studio 2019. If you have problems building make sure your Visual Studio 2019 installation includes `ASP.NET`, `.NET desktop development` and `.NET Core cross platform development`
-
-# .exe
-In case you cannot or dont have the time to build the app there is a .exe at `bin\Release\netcoreapp3.1\PowerAssinger.exe`
